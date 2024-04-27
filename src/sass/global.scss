@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+$delete-red: red;
+*::after,
+::before {
+  box-sizing: border-box;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  img {
+    margin-bottom: -40px;
+    width: 250px;
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    li {
+      font-size: 30px;
+      color: black;
+
+      a {
+        color: black;
+        transition: 0.5s;
+        &:hover {
+          color: red;
+          font-size: 32px;
+        }
+      }
+    }
+  }
+}
+
+.user {
+  padding-top: 60px;
+  .card {
+    padding-top: 24px;
+    position: relative;
+    h1 {
+      font-size: 27px;
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    h2 {
+      font-size: 22px;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+    h3 {
+      text-align: center;
+      font-size: 22px;
+    }
+    .role {
+      padding: 10px;
+      background-color: red;
+      color: white;
+      width: 80px;
+      font-size: 20px;
+      text-align: center;
+      border-radius: 35px;
+      position: absolute;
+      top: 4px;
+      left: 5px;
+    }
+    .trash {
+      padding-right: 5px;
+      font-size: 20px;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      background: none;
+      border: 1px solid lighten(gray, 24%);
+      height: 48px;
+      padding: 0 24px 0 16px;
+      letter-spacing: 0.25px;
+      border-radius: 24px;
+      cursor: pointer;
+      margin: 30px auto;
+
+      &:focus {
+        outline: none;
+      }
+
+      .mdi {
+        margin-right: 8px;
+      }
+    }
+
+    .btn-delete {
+      font-size: 16px;
+      color: red;
+
+      > .mdi-delete-empty {
+        display: none;
+      }
+
+      &:hover {
+        background-color: lighten(red, 48%);
+
+        > .mdi-delete-empty {
+          display: block;
+        }
+
+        > .mdi-delete {
+          display: none;
+        }
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 4px lighten(red, 40%);
+      }
+    }
+  }
+}
+
+.create {
+  padding-top: 100px;
+  form {
+    padding: 20px;
+    max-width: 960px;
+    margin: 0 auto;
+    height: 680px;
+    box-shadow: 0 15px 20px #abb2b9;
+    h1 {
+      font-size: 40px;
+      padding-bottom: 10px;
+      color: #2f4f4f;
+    }
+    .inp {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-top: 20px;
+      .inp1 {
+        display: flex;
+        flex-direction: column;
+        label {
+          font-size: 22px;
+          padding-bottom: 10px;
+          color: #2f4f4f;
+        }
+      }
+      input {
+        width: 440px;
+        height: 50px;
+        margin: 0 auto;
+        padding-left: 10px;
+        font-size: 20px;
+        outline: none;
+        border: 1px solid #ccc;
+        &:is(:focus, :valid) {
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+    button {
+      display: block;
+      height: 50px;
+      width: 100%;
+      color: #fff;
+      background-image: linear-gradient(to right, #aa076b, #61045f);
+      font-size: 20px;
+      margin: 30px auto;
+      outline: none;
+      border: 1px solid gray;
+    }
+    .active {
+      display: block;
+      width: 440px;
+      height: 50px;
+      margin: 0 auto;
+      padding-left: 10px;
+      font-size: 20px;
+      outline: none;
+      border: 1px solid #ccc;
+      &:is(:focus, :valid) {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+      }
+    }
+    p {
+      font-size: 18px;
+      color: gray;
+      text-align: center;
+      padding-top: 40px;
+    }
+  }
+}
